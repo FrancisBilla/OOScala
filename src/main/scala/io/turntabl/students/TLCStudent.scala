@@ -12,38 +12,42 @@ object TLCStudent extends App {
                    val url: String = "https://github.com/turntabl",
                    val yearEmployed: Int = 0) {
 
+    //OBJECT TO STUDENT CLASS
     object TLCStudent{
       def apply(f: String, l: String): TLCStudent = new TLCStudent(f, l)
     }
 
-    def isEqualYears(x: TLCStudent)= x.yearEmployed == x.yearEmployed
-
+    //OVERRIDE  TOSTRING ON TLCSTUDENTS CLASS
     override def toString = s"$fName $lName $iDNumber $roleDescription $url "
 
-    println(s"creating Person $fName $lName whose ID Number is $iDNumber, and have been employ as $roleDescription")
 
-  }
-
-
+    //SAME TERM OF SERVICE
+    def isEqualYears(x: TLCStudent)= x.yearEmployed == x.yearEmployed
+ }
 
   val person1 = new TLCStudent("Mike","Ansah",324453,"Accountant","https://github.com/FrancisBilla/OOScala",2019)
-  val yearEmployedOfPerson1: Int  = 2019
 
 
   val person2 = new TLCStudent("Vivian","Boakye",3564543,"Developer","https://github.com/FrancisBilla/OOScala",2019)
-  val yearEmployedOfPerson2: Int  = 2020
 
 
-  def calYear(yearOfWork: Int, currentYear: Int)=currentYear-yearOfWork
 
 
+ //CALCULATE TERM OF SERVICE
+ def termOfService(x: TLCStudent, currentYear: Int)=currentYear - x.yearEmployed
+
+
+
+//TOP GRADE
   def TopGrade()=Grade("Go", 89)
 
-  println(calYear(yearEmployedOfPerson1, 2025))
 
 
+  println("Calculate term of service: " + termOfService(person1, 2025))
+    print("Checking the year is the same: ")
+  println( person1 isEqualYears person2)
 
-  println(person1 isEqualYears person2)
+  println("Top Grade: "+TopGrade())
 
 
 
