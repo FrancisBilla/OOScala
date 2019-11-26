@@ -19,7 +19,7 @@ object functionalScala extends App {
 
 
   //CALCULATOR
-  val Calculator =(p: String) => ((x: Int, y: Int) =>p match{
+  val Calculator =(p: String) => ((x: Int, y: Int) => p match{
   case i if (p == "add") => x + y
   case i if (p == "subtract") => x - y })
   val inner = Calculator("add")
