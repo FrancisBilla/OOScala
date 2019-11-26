@@ -1,16 +1,22 @@
 package io.turntabl.students
 
+import io.turntabl.TurntablEmployee
 import io.turntabl.grade.Grade
 import javax.security.auth.Subject
 
 object TLCStudent extends App {
 
-  class TLCStudent(val fName: String,
+  class TLCStudent (val fName: String,
                    val lName: String,
                    val iDNumber: Int = 0,
                    val roleDescription: String = "null",
                    val url: String = "https://github.com/turntabl",
-                   val yearEmployed: Int = 0) {
+                   val yearEmployed: Int = 0) extends TurntablEmployee{
+
+    //IMPLEMENTING TURNTABL EMPLOYEE
+    def printWorkHard = print("Works Super Hard")
+
+    override def GetWorkload: Unit = super.GetWorkload
 
     //OBJECT TO STUDENT CLASS
     object TLCStudent{
@@ -29,8 +35,6 @@ object TLCStudent extends App {
 
 
   val person2 = new TLCStudent("Vivian","Boakye",3564543,"Developer","https://github.com/FrancisBilla/OOScala",2019)
-
-
 
 
  //CALCULATE TERM OF SERVICE
